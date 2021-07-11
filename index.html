@@ -27,33 +27,49 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><i class="fab fa-youtube"
-                style="font-size: 30px; color: red; margin-right: 2px;"></i>YouTube</a></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <a class="navbar-brand" href="#"><i class="fab fa-youtube"
+                style="font-size: 30px; color: red; margin-right: 2px;"></i>YouTube</a></a>
+
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="form-inline mr-auto ml-auto" style="width: 70%; text-align: center;">
-                <input class="form-control input" type="search" id="channel-form" placeholder="Enter Channel Name"
+            <form class="form-inline mr-auto ml-auto my-1" id="channel-form" style="width: 70%; text-align: center;">
+                <input class="form-control input" type="search" id="channel-input" placeholder="Enter Channel Name"
                     aria-label="Search" style="width: 70%;">
-                <button class="btn search ml-1" id="channel-input" type="submit"><i class="fas fa-search"></i></button>
+                <button class="btn search ml-1" type="submit"><i class="fas fa-search"></i></button>
             </form>
-            <ul class="navbar-nav mr-2">
+            <ul class="navbar-nav mr-2 my-1">
                 <li class="nav-item active">
-                    <button class="btn playlist" id="my-playlist">My Playlist</button>
+                    <button class="btn playlist" id="my-playlist">My Channel</button>
                 </li>
             </ul>
-            <button class="loginout" id="authorize-button">Sign In</button>
-            <button class="loginout" id="signout-button">Sign Out</button>
         </div>
+
+        <button class="loginout my-1" id="authorize-button">Sign In</button>
+        <button class="loginout my-1" id="signout-button">Sign Out</button>
+
+
     </nav>
-    <div id="channel-data" class="container">
+    <div class="row" style="text-align: center; margin: 5px 0px 20px;">
+        <div class="col-0 col-md-3 col-xl-4"></div>
+        <div class="col-12 col-md-3 col-xl-2"><button class="btn btn-sm Subscription" id="my-subscriptions">View
+                Subscription</button></div>
+        <div class="col-12 col-md-3 col-xl-2"></div>
+        <div class="col-0 col-md-3 col-xl-4"></div>
+    </div>
+
+    <div id="channel-data" class="playlist-container">    
+    </div>
+    <div class="playlist-container" id="playlist">    </div>
     </div>
     <div class="playlist-container" id="uploaded-videos">
-        
     </div>
+    <div class="subscription-container" id="subscription-data">
+    </div>
+    
 
     <script src="index.js"></script>
     <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
