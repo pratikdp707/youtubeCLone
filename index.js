@@ -123,7 +123,6 @@ function getChannel(channel) {
                 const playlistId = channel.contentDetails.relatedPlaylists.uploads;
                 displayPlaylist(playlistId);
             })
-            .catch(err => alert('No Channel By That Name'));
     } else {
         gapi.client.youtube.channels
             .list({
@@ -157,7 +156,6 @@ function getChannel(channel) {
                 const playlistId = channel.contentDetails.relatedPlaylists.uploads;
                 displayPlaylist(playlistId);
             })
-            .catch(err => alert('No Channel By That Name'));
 
     }
 
@@ -181,7 +179,8 @@ function displayPlaylist(playlistId) {
         const playListItems = response.result.items;
 
         if (playListItems.length != 0) {
-            let htmlStart = `<div class="row"><h5 style="padding:17px;">Latest Videos</h5></div>
+
+            let htmlStart = `<div class="row"><h5 style="padding:17px;">${playListItems[0].snippet.title}</h5></div>
             <div class="row">`;
             let htmlEnd = `</div>`;
             // Loop through videos and append output
@@ -312,34 +311,33 @@ async function displayVideos(url) {
             console.log(response);
             const playListItems = response.result.items;
 
-                htmlStart += `<div class="row"><h5 style="padding:17px;">${item.snippet.title}</h5></div>
+            htmlStart += `<div class="row"><h5 style="padding:17px;">${item.snippet.title}</h5></div>
                 <div class="row">`;
-                let htmlEnd = `</div>`;
-                // Loop through videos and append output
+            let htmlEnd = `</div>`;
+            // Loop through videos and append output
 
-                playListItems.forEach(item => {
-                    const videoId = item.snippet.resourceId.videoId;
+            playListItems.forEach(item => {
+                const videoId = item.snippet.resourceId.videoId;
 
-                    htmlStart += `<div class="col-12 col-md-4 col-lg-3 col-xl-2" style="margin: 7px 0";>
+                htmlStart += `<div class="col-12 col-md-4 col-lg-3 col-xl-2" style="margin: 7px 0";>
                     <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>`;
-                });
-                htmlStart += htmlEnd;
-                // Output videos
-                videoContainer.innerHTML = htmlStart;
+            });
+            htmlStart += htmlEnd;
+            // Output videos
+            videoContainer.innerHTML = htmlStart;
 
 
-                //     htmlStart += `<div class="row" style="margin-top: 20px;">
-                //    <div class="col col-12 col-md-2" style="text-align: right;">
-                //        <img src=${item.snippet.thumbnails.medium.url} alt="" class="channels-image">
-                //    </div>
-                //    <div class="col-col-12 col-md-10">
-                //        <h4 class="title" style="text-align: left;">${item.snippet.title}</h4>
-                //        <p class="channel-sub-video">${item.snippet.channelTitle}</p>
-                //        <p class="channel-sub-video">${new Date(item.snippet.publishedAt).toDateString} Videos</p>
-                //    </div>
-                //    </div>`
+            //     htmlStart += `<div class="row" style="margin-top: 20px;">
+            //    <div class="col col-12 col-md-2" style="text-align: right;">
+            //        <img src=${item.snippet.thumbnails.medium.url} alt="" class="channels-image">
+            //    </div>
+            //    <div class="col-col-12 col-md-10">
+            //        <h4 class="title" style="text-align: left;">${item.snippet.title}</h4>
+            //        <p class="channel-sub-video">${item.snippet.channelTitle}</p>
+            //        <p class="channel-sub-video">${new Date(item.snippet.publishedAt).toDateString} Videos</p>
+            //    </div>
+            //    </div>`
         });
     });
 }
-
