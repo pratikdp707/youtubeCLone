@@ -1,0 +1,85 @@
+body{
+    background: #2B2B2B;
+    color: white;
+}
+
+.navbar{
+    padding: 0px;
+    padding-left: 50px;
+}
+
+.navbar-brand{
+    font-size: 30px;
+    font-family: Roboto, Arial, sans-serif;
+    letter-spacing: 0px;
+    font-weight: 500;
+}
+
+.search{
+    color: white;
+    background: #2B2B2B;
+}
+
+.input{
+    background: #2B2B2B;
+    color: white;
+    border: none;
+    font-family: Roboto, Arial, sans-serif;
+    letter-spacing: 1px;
+}
+.input:hover{
+    background-color: #000;
+    color: white;
+}
+
+.search:hover{
+    color: white;
+    background: #000;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+.loginout{
+    border: none;
+    height: 40px;
+    width: 100px;
+    background: #2B2B2B;
+    margin-right: 10px;
+    color: white;
+    font-family: Roboto, Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.loginout:hover{
+    background: #000;
+}
+
+.playlist{
+    height: 40px;
+    background: #CE1212;
+    border: none;
+    color: #2B2B2B;
+    font-family: Roboto, Arial, sans-serif;
+    letter-spacing: 1px;
+    border-radius: 0;
+    font-weight: 700;
+}
+
+.playlist:hover{
+    background-color: #2B2B2B;
+    color: #CE1212;
+}
+
+.channel-image{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+.container{
+    margin-top: 20px;
+}
+
+.playlist-container{
+    margin: 10px 40px 10px;
+    padding: 20px;
+}
